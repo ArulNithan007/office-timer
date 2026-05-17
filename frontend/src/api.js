@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3001';
+const API_BASE = 'https://office-timer-backend.onrender.com';
 
 async function request(path, options = {}) {
   const res = await fetch(`${API_BASE}${path}`, {
