@@ -4,6 +4,7 @@ const cors = require('cors');
 const { stmts } = require('./db');
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = 3001;
 
 const USERS = {
@@ -26,7 +27,8 @@ app.use(
     cookie: {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
-      sameSite: 'lax',
+      sameSite: 'none',
+      secure: true,
     },
   })
 );
